@@ -1,0 +1,66 @@
+<article >
+    <h2
+      class="text-center text-3xl hover:underline bg-primary text-white font-bold px-10 py-10">
+      Blog Section
+    </h2>
+  
+    <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-4 ">
+        <% for (const blog of blogs) { %>
+          <div class="bg-slate-900 shadow-md border border-gray-200 rounded-lg max-w-[400px] mb-5 mx-auto">
+            <a href="#">
+              <img class="rounded-t-lg" src="https://flowbite.com/docs/images/blog/image-1.jpg" alt="" />
+            </a>
+            <div class="p-5">
+              <a href="#">
+                <h5 class="text-gray-100 font-bold text-2xl tracking-tight mb-2">
+                  <%= blog.title %>
+                </h5>
+              </a>
+              <p class="font-normal text-gray-300 mb-3"><%= blog.content %></p>
+              <button  
+                class="text-white bg-indigo-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center"
+                onclick={blog_navigating(`<%= blog.id %>`)}
+              >
+          Liked By  <%= blog.thumbsup %>
+              </button>
+            </div>
+          </div>
+        <% } %>
+      </div>
+  </section>
+  <script>
+    
+ const   blog_navigating=(a)=>{ 
+    console.log(a)
+  routemamba.navigate(`/blogs/${a}`);}
+   
+  </script>
+  
+<!-- 
+
+    
+There are many attributes that can be included in a blog post, but some of the most important include:
+
+Headline: The headline is the first thing people will see, so it's important to make it attention-grabbing and relevant to the content of the post.
+Meta description: The meta description is a brief summary of the post that appears in search engine results pages (SERPs). It's important to make sure the meta description is clear, concise, and accurately reflects the content of the post.
+Subheadings: Subheadings break up the text of the post and make it easier to read. They should be clear and concise, and they should accurately reflect the content of the sub-section they're heading.
+Body copy: The body copy is the main content of the post. It should be well-written, informative, and engaging.
+Images: Images can help to break up the text and make the post more visually appealing. They should be relevant to the content of the post and high-quality.
+Call to action: A call to action is a statement that tells the reader what you want them to do after reading the post. It could be to subscribe to your blog, share the post on social media, or visit your website.
+In addition to these essential attributes, you may also want to include other elements in your blog posts, such as:
+
+Quotes: Quotes from experts or other relevant sources can add credibility to your post.
+Lists: Lists can be a great way to organize information and make it easier to read.
+Charts and graphs: Charts and graphs can help to illustrate complex concepts and make them easier to understand.
+Videos: Videos can be a great way to engage readers and provide them with additional information.
+The specific attributes that you include in your blog posts will depend on the purpose of your blog and the target audience. However, the attributes listed above are a good starting point for creating high-quality blog posts.
+
+Here are some additional tips for writing effective blog posts:
+
+Write about topics that you're passionate about. This will make your writing more engaging and interesting for your readers.
+Do your research. Make sure you're well-informed about the topic you're writing about. This will help you to write a more informative and credible post.
+Use clear and concise language. Your readers should be able to understand your points without having to struggle through complex sentences or jargon.
+Proofread your work carefully. Typos and grammatical errors will make your blog post look unprofessional.
+Promote your blog posts. Share them on social media, email them to your subscribers, and submit them to relevant directories.
+By following these tips, you can write effective blog posts that will engage your readers and attract new visitors to your blog.
+ -->

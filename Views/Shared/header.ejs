@@ -1,0 +1,90 @@
+<nav class="bg-slate-900 text-slate-200 py-2 md:py-4">
+  <div class="container px-4 mx-auto md:flex md:items-center">
+    <div class="flex justify-between items-center">
+      <a href="#" class="font-bold text-xl text-indigo-600 font-mono">
+        <span id="span" class="mx-auto text-3xl font-bold"></span>
+      </a>
+      <button
+        class="border border-solid border-gray-600 px-3 py-1 rounded text-gray-300 bg-slate-100 opacity-50 hover:opacity-75 md:hidden"
+        id="navbar-toggle"
+      >
+        <img
+          src="https://img.icons8.com/?size=512&id=3096&format=png"
+          class="w-[25px] h-[25px]"
+        />
+      </button>
+    </div>
+
+    <div
+      class="hidden md:flex flex-col md:flex-row md:ml-auto mt-3 md:mt-0"
+      id="navbar-collapse"
+    >
+      <a
+        id="home"
+        class="p-2 lg:px-4 md:mx-2 text-white rounded bg-indigo-600"
+        id="home"
+        >Home</a
+      >
+      <a
+        id="about"
+        class="p-2 lg:px-4 md:mx-2 text-gray-300 rounded hover:bg-gray-200 hover:text-gray-700 transition-colors duration-300"
+      >
+        About
+      </a>
+      <a
+        id="blogs"
+        class="p-2 lg:px-4 md:mx-2 text-gray-300 rounded hover:bg-gray-200 hover:text-gray-700 transition-colors duration-300"
+      >
+        Blogs
+      </a>
+      <a
+        id="about"
+        class="p-2 lg:px-4 md:mx-2 text-gray-300 rounded hover:bg-gray-200 hover:text-gray-700 transition-colors duration-300"
+      >
+        Meetup
+      </a>
+    </div>
+  </div>
+</nav>
+
+<script>
+  var span = document.getElementById("span");
+
+  function time() {
+    var d = new Date();
+    var s = d.getSeconds();
+    var m = d.getMinutes();
+    var h = d.getHours();
+    span.textContent =
+      ("0" + h).substr(-2) +
+      ":" +
+      ("0" + m).substr(-2) +
+      ":" +
+      ("0" + s).substr(-2);
+  }
+
+  setInterval(time, 1000);
+
+  let toggleBtn = document.querySelector("#navbar-toggle");
+  let collapse = document.querySelector("#navbar-collapse");
+
+  var home_btn = document.getElementById("home");
+  var about_btn = document.getElementById("about");
+  var blog_btn = document.getElementById("blogs");
+
+  toggleBtn.onclick = () => {
+    collapse.classList.toggle("hidden");
+    collapse.classList.toggle("flex");
+  };
+
+  home_btn.addEventListener("click", () => {
+    routemamba.navigate("/");
+  });
+
+  about_btn.addEventListener("click", () => {
+    routemamba.navigate("/about");
+  });
+  blog_btn.addEventListener("click", () => {
+    routemamba.navigate("/blogs");
+  });
+</script>
